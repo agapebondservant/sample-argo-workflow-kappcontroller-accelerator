@@ -1,0 +1,88 @@
+accelerator:
+  displayName: Sample Argo Workflow with KappController
+  description: Integrates Argo Workflow with GitOps using KappController
+  iconUrl: https://github.com/cncf/artwork/blob/master/projects/argo/horizontal/color/argo-horizontal-color.svg
+  tags:
+  - "ML"
+  - "AI"
+  - "machinelearning"
+  - "datascience"
+  - "MLOps"
+  - "artificialintelligence"
+  - "python"
+  - "R"
+  - "argo"
+  - "pipeline"
+  - "kapp"
+  - "kappcontroller"
+  - "gitops"
+  - "carvel"
+  - model_stage: FINAL_MODEL_STAGE_ON_PASS
+    git_repo_user: GIT_REPO_USER
+    git_repo_app: GIT_REPO_REPOSITORY
+    experiment_name: TRAINING_EXPERIMENT_NAME
+    environment_name: GIT_REPO_BRANCH
+    oyher: MYPIPELINEAPP
+    workflow: MYPIPELINEWORKFLOW
+  options:
+    - name: final_model_stage_on_pass
+      inputType: select
+      choices:
+        - value: Production
+          text: Production
+        - value: Staging
+          text: Staging
+        - value: None
+          text: None
+      defaultValue: Production
+      required: true
+      display: true
+      label: 'Final Model Stage on Pass'
+    - name: git_repo_user
+      inputType: text
+      display: true
+      label: 'Git Repo User'
+    - name: git_repo_repository
+      inputType: text
+      display: true
+      label: 'Git Repository Name'
+    - name: training_experiment_name
+      inputType: text
+      display: true
+      label: 'Name of Training Experiment'
+    - name: git_repo_branch
+      inputType: text
+      display: true
+      label: 'Git Repo Branch'
+    - name: pipeline_appcr_name
+      inputType: text
+      display: true
+      label: 'Name of KappController Resource'
+    - name: pipeline_workflow_name
+      inputType: text
+      display: true
+      label: 'Name of Argo Workflow'
+engine:
+  type: Merge
+  sources:
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ 'resources/**' ]
+        - type: ReplaceText
+          substitutions:
+            - text: FINAL_MODEL_STAGE_ON_PASS
+              with: "#final_model_stage_on_pass"
+            - text: GIT_REPO_USER
+              with: "#git_repo_user"
+            - text: GIT_REPO_REPOSITORY
+              with: "#git_repo_repository"
+            - text: TRAINING_EXPERIMENT_NAME
+              with: "#training_experiment_name"
+            - text: GIT_REPO_BRANCH
+              with: "#git_repo_branch"
+            - text: MYPIPELINEAPP
+              with: "#pipeline_appcr_name"
+            - text: MYPIPELINEWORKFLOW
+              with: "#pipeline_workflow_name"
+
