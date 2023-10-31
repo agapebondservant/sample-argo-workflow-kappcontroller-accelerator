@@ -22,12 +22,13 @@ tanzu acc create argo-pipelines-kapp-acc --git-repository https://github.com/aga
 
 ### Deploy Pre-requisites <a name="prereq">
 * Set up the following pre-requisites on your Kubernetes cluster:
-[ x ] Argo Workflows
+[ X ] Argo Workflows
+[ X ] Tanzu Cluster Essentials
 
 * Set up permissions:
 ```
-kubectl apply -f resources/tap-rbac.yaml
-kubectl apply -f resources/tap-rbac-2.yaml
+kubectl apply -f resources/rbac.yaml
+kubectl apply -f resources/rbac-2.yaml
 ```
 
 ### Deploy Argo Training Pipeline on TAP <a name="deploy">
