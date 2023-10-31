@@ -2,6 +2,10 @@
 
 This is an accelerator that can be used to generate an Argo Workflows deployment which integrates with KappController.
 
+<img src="resources/image.png"
+alt="Markdown Monster icon"
+style="float: left; margin-right: 10px;" />
+
 * Install App Accelerator: (see https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-cert-mgr-contour-fcd-install-cert-mgr.html)
 ```
 tanzu package available list accelerator.apps.tanzu.vmware.com --namespace tap-install
