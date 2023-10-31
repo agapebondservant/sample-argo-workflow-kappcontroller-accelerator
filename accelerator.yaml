@@ -28,7 +28,6 @@ accelerator:
         - value: None
           text: None
       defaultValue: Production
-      required: true
       display: true
       label: 'Final Model Stage on Pass'
     - name: git_repo_user
