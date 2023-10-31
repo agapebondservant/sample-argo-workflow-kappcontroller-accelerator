@@ -18,7 +18,7 @@ accelerator:
   - "gitops"
   - "carvel"
   options:
-    - name: final_model_stage_on_pass
+    - name: finalModelStageOnPass
       inputType: select
       choices:
         - value: Production
@@ -30,27 +30,27 @@ accelerator:
       defaultValue: Production
       display: true
       label: 'Final Model Stage on Pass'
-    - name: git_repo_user
+    - name: gitRepoUser
       inputType: text
       display: true
       label: 'Git Repo User'
-    - name: git_repo_repository
+    - name: gitRepoRepository
       inputType: text
       display: true
       label: 'Git Repository Name'
-    - name: training_experiment_name
+    - name: trainingExperimentName
       inputType: text
       display: true
       label: 'Name of Training Experiment'
-    - name: git_repo_branch
+    - name: gitRepoBranch
       inputType: text
       display: true
       label: 'Git Repo Branch'
-    - name: pipeline_appcr_name
+    - name: pipelineAppcrName
       inputType: text
       display: true
       label: 'Name of KappController Resource'
-    - name: pipeline_workflow_name
+    - name: pipelineWorkflowName
       inputType: text
       display: true
       label: 'Name of Argo Workflow'
@@ -64,17 +64,17 @@ engine:
         - type: ReplaceText
           substitutions:
             - text: FINAL_MODEL_STAGE_ON_PASS
-              with: "#final_model_stage_on_pass"
+              with: "#finalModelStageOnPass"
             - text: GIT_REPO_USER
-              with: "#git_repo_user"
+              with: "#gitRepoUser"
             - text: GIT_REPO_REPOSITORY
-              with: "#git_repo_repository"
+              with: "#gitRepoRepository"
             - text: TRAINING_EXPERIMENT_NAME
-              with: "#training_experiment_name"
+              with: "#trainingExperimentName"
             - text: GIT_REPO_BRANCH
-              with: "#git_repo_branch"
+              with: "#gitRepoBranch"
             - text: MYPIPELINEAPP
-              with: "#pipeline_appcr_name"
+              with: "#pipelineAppcrName"
             - text: MYPIPELINEWORKFLOW
-              with: "#pipeline_workflow_name"
+              with: "#pipelineWorkflowName"
 

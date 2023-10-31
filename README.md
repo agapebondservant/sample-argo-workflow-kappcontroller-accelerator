@@ -32,26 +32,17 @@ kubectl apply -f resources/rbac-2.yaml
 ```
 
 ### Deploy Argo Training Pipeline on TAP <a name="deploy">
-* cd to </root/of/branch/directory/with/appropriate/model/stage>
-  (Example: the **main** github branch represents the "main" environment, the **staging** github branch represents the "staging" environment, etc)
-
-* Deploy the pipeline:
+* From the directory root, deploy the pipeline:
 ```
-ytt -f config/cifar/pipeline_app.yaml -f config/cifar/values.yaml | kapp deploy -a image-procesor-pipeline-<THE PIPELINE ENVIRONMENT> --logs -y  -nargo -f -
+ytt -f pipeline_app.yaml -f values.yaml | kapp deploy -a <app-name> --logs -y  -nargo -f -
 ```
 
 * View progress:
 ```
-kubectl get app ml-image-processing-pipeline-<THE PIPELINE ENVIRONMENT> -oyaml  -nargo
-```
-
-* View the pipeline in the browser by navigating to https://argo-workflows.<your-domain-name> -
-  access the Login token by running
-```
-kubectl -n argo exec $(kubectl get pod -n argo -l 'app=argo-server' -o jsonpath='{.items[0].metadata.name}') -- argo auth token
+kubectl get app <app-name> -oyaml  -nargo
 ```
 
 * To delete the pipeline:
 ```
-kapp delete -a image-procesor-pipeline-<THE PIPELINE ENVIRONMENT> -y -nargo
+kapp delete -a <app-name> -y -nargo
 ```
