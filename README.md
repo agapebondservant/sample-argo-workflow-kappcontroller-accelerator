@@ -1,6 +1,6 @@
-# DataHub Accelerator
+# Argo Workflows Accelerator
 
-This is an accelerator that can be used to generate a Kubernetes deployment for [DataHub](https://datahubproject.io/).
+This is an accelerator that can be used to generate an Argo Workflows deployment which integrates with KappController.
 
 * Install App Accelerator: (see https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-cert-mgr-contour-fcd-install-cert-mgr.html)
 ```
@@ -22,8 +22,8 @@ tanzu acc create argo-pipelines-kapp-acc --git-repository https://github.com/aga
 
 ### Deploy Pre-requisites <a name="prereq">
 * Set up the following pre-requisites on your Kubernetes cluster:
-[ X ] Argo Workflows
-[ X ] Tanzu Cluster Essentials
+[ ] Argo Workflows
+[ ] Tanzu Cluster Essentials
 
 * Set up permissions:
 ```
