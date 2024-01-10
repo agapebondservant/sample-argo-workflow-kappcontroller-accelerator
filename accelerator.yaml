@@ -18,6 +18,13 @@ accelerator:
   - "gitops"
   - "carvel"
   options:
+    - name: showGuidanceLink
+      inputType: radio
+      display: true
+      choices:
+        - text: 'View guidance manual: https://raw.githubusercontent.com/agapebondservant/accelerator-docs/main/docs/sample-kapp-argo-workflow.pdf'
+          value: doc
+      defaultValue: doc
     - name: finalModelStageOnPass
       inputType: select
       choices:
@@ -29,31 +36,31 @@ accelerator:
           text: None
       defaultValue: Production
       display: true
-      label: 'Final Model Stage on Pass'
+      label: 'Final Model Stage on Pass: Provide final stage to transition successfully validated models after model evaluation'
     - name: gitRepoUser
       inputType: text
       display: true
-      label: 'Git Repo User'
+      label: 'Git Repository User: Provide git user used by kapp-controller'
     - name: gitRepoRepository
       inputType: text
       display: true
-      label: 'Git Repository Name'
+      label: 'Git Repository Name: Provide http link to the source git repository of the workflow'
     - name: trainingExperimentName
       inputType: text
       display: true
-      label: 'Name of Training Experiment'
+      label: 'Name of Training Experiment: Provide the name of the MLflow training experiment'
     - name: gitRepoBranch
       inputType: text
       display: true
-      label: 'Git Repo Branch'
+      label: 'Git Repository Branch: Provide the name of the git branch in the source git repository'
     - name: pipelineAppcrName
       inputType: text
       display: true
-      label: 'Name of KappController Resource'
+      label: 'Name of KappController Resource: Provide the name of the App object that will represent this flow'
     - name: pipelineWorkflowName
       inputType: text
       display: true
-      label: 'Name of Argo Workflow'
+      label: 'Name of Argo Workflow: Provide the name of the Argo Workflow pipeline that will be generated'
 engine:
   type: Merge
   sources:
