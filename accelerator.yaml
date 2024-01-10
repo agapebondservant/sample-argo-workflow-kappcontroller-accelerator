@@ -34,7 +34,7 @@ accelerator:
           text: Staging
         - value: None
           text: None
-      defaultValue: Production
+      defaultValue: Staging
       display: true
       label: 'Final Model Stage on Pass: Provide final stage to transition successfully validated models after model evaluation'
     - name: gitRepoUser
