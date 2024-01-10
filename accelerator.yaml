@@ -18,7 +18,7 @@ accelerator:
   - "gitops"
   - "carvel"
   options:
-    - name: Manual
+    - name: manual
       inputType: radio
       display: true
       choices:
