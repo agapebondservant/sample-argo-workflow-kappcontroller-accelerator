@@ -18,7 +18,7 @@ accelerator:
   - "gitops"
   - "carvel"
   options:
-    - name: showGuidanceLink
+    - name: Manual
       inputType: radio
       display: true
       choices:
