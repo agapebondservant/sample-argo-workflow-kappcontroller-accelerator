@@ -1,7 +1,7 @@
 accelerator:
   displayName: Sample Argo Workflow with KappController
   description: Integrates Argo Workflow with GitOps using KappController
-  iconUrl: https://github.com/cncf/artwork/blob/master/projects/argo/horizontal/color/argo-horizontal-color.svg
+  iconUrl: https://raw.githubusercontent.com/cncf/artwork/main/projects/argo/horizontal/color/argo-horizontal-color.svg
   tags:
   - "ML"
   - "AI"
