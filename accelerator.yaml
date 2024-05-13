@@ -17,6 +17,8 @@ accelerator:
   - "kappcontroller"
   - "gitops"
   - "carvel"
+  - "sample"
+  - "app"
   options:
     - name: manual
       inputType: radio
