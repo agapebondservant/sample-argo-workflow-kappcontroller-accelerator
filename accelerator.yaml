@@ -23,7 +23,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'View guidance manual: https://raw.githubusercontent.com/agapebondservant/accelerator-docs/main/docs/sample-kapp-argo-workflow.pdf'
+        - text: 'View guidance manual: https://green-korrie-24.tiiny.site'
           value: doc
       defaultValue: doc
     - name: finalModelStageOnPass
